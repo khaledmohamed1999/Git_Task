@@ -15,21 +15,21 @@ const getTotal = () => getShipping() + getSubTotal();
 
 const incQuantity = (i) => {
   products[i].quantity++;
-  localStorage.setItem("products", JSON.stringify(products));
+  updateLocalStorage(products);
   renderHTML();
 };
 
 const decQuantity = (i) => {
   if (products[i].quantity > 1){
     products[i].quantity--;
-    localStorage.setItem("products", JSON.stringify(products));
+    updateLocalStorage(products);
     renderHTML();
   } 
 };
 
 const remove = (i) => {
   products.splice(i, 1);
-  localStorage.setItem("products", JSON.stringify(products));
+  updateLocalStorage(products);
   renderHTML();
 };
 
@@ -42,6 +42,10 @@ const renderHTML = () => {
   document.getElementById("sub-total").innerHTML = `$${getSubTotal()}`;
   document.getElementById("total").innerHTML = `$${getTotal()}`;
 };
+
+const updateLocalStorage = (modifiedProductArray) => {
+  localStorage.setItem("products", JSON.stringify(modifiedProductArray));
+}
 
 const getProductHTMLRow = (p, i) => {
   return `
