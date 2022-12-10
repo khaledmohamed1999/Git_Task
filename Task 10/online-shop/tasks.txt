@@ -1,0 +1,13 @@
+HTML	Product Description Page
+CSS	Header with Simple Menu
+CSS	Complete Header and Main Layout
+JS	Add Product Component
+JS	Use Functions
+JS	OOP: Products with Cart -> Tue, Sat as an Exception
+JS	API CRUD Operations -> Tue, Sat as an Exception
+Angular	Convert Template into Angular -> Sat
+--------------------------------------------------------
+Angular	Implement HomePage Component (Implement like button logic using localstorage)   -> Sat
+Angular	Implement Product Cycle (Implement addProducts, getCartLines in StorageService)  -> Sun
+Angular	Implement Cart Component (Convert product, cartline, cart Logics To OOP) -> Tue
+Angular	Implement Checkout Logic (Form Validation, login page and ) -> Thu
