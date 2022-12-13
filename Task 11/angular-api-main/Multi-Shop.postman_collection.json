@@ -1,0 +1,389 @@
+{
+	"info": {
+		"_postman_id": "8a317bf7-5bcd-4518-9a34-f0e8ccd7cff7",
+		"name": "Multi-Shop",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Products",
+			"item": [
+				{
+					"name": "AddProduct",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Product 6 Cat2\",\r\n  \"image\": \"assets/img/prod-6.jpg\",\r\n  \"category_id\": \"6346aed67c308ccff12e065c\",\r\n  \"price\": 110,\r\n  \"discount\": 0.25,\r\n  \"rating\": 3,\r\n  \"rating_count\": 120,\r\n  \"is_featured\": false,\r\n  \"is_recent\": true,\r\n  \"description\": \"Product 6 Cat2 Product 6 Cat2 Product 6 Cat2 Product 6 Cat2 Product 6 Cat2 Product 6 Cat2 Product 6 Cat2 Product 6 Cat2 Product 6 Cat2 Product 6 Cat2 Product 6 Cat2 \"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://warm-mesa-88190.herokuapp.com/api/products",
+							"protocol": "https",
+							"host": [
+								"warm-mesa-88190",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Products",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Product 6 Cat2\",\r\n  \"image\": \"assets/img/prod-6.jpg\",\r\n  \"category_id\": \"6346aed67c308ccff12e065c\",\r\n  \"price\": 110,\r\n  \"discount\": 0.25,\r\n  \"rating\": 3,\r\n  \"rating_count\": 120,\r\n  \"is_featured\": false,\r\n  \"is_recent\": true,\r\n  \"description\": \"Product 6 Cat2 Product 6 Cat2 Product 6 Cat2 Product 6 Cat2 Product 6 Cat2 Product 6 Cat2 Product 6 Cat2 Product 6 Cat2 Product 6 Cat2 Product 6 Cat2 Product 6 Cat2 \"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://warm-mesa-88190.herokuapp.com/api/products/",
+							"protocol": "https",
+							"host": [
+								"warm-mesa-88190",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"products",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetFeatured",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://warm-mesa-88190.herokuapp.com/api/products/getFeatured",
+							"protocol": "https",
+							"host": [
+								"warm-mesa-88190",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"products",
+								"getFeatured"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetRecent",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://warm-mesa-88190.herokuapp.com/api/products/getRecent",
+							"protocol": "https",
+							"host": [
+								"warm-mesa-88190",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"products",
+								"getRecent"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Products By Id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Product 6 Cat2\",\r\n  \"image\": \"assets/img/prod-6.jpg\",\r\n  \"category_id\": \"6346aed67c308ccff12e065c\",\r\n  \"price\": 110,\r\n  \"discount\": 0.25,\r\n  \"rating\": 3,\r\n  \"rating_count\": 120,\r\n  \"is_featured\": false,\r\n  \"is_recent\": true,\r\n  \"description\": \"Product 6 Cat2 Product 6 Cat2 Product 6 Cat2 Product 6 Cat2 Product 6 Cat2 Product 6 Cat2 Product 6 Cat2 Product 6 Cat2 Product 6 Cat2 Product 6 Cat2 Product 6 Cat2 \"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://warm-mesa-88190.herokuapp.com/api/products/6346c15ea060efd7cae40589",
+							"protocol": "https",
+							"host": [
+								"warm-mesa-88190",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"products",
+								"6346c15ea060efd7cae40589"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Products By Category Id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Product 6 Cat2\",\r\n  \"image\": \"assets/img/prod-6.jpg\",\r\n  \"category_id\": \"6346aed67c308ccff12e065c\",\r\n  \"price\": 110,\r\n  \"discount\": 0.25,\r\n  \"rating\": 3,\r\n  \"rating_count\": 120,\r\n  \"is_featured\": false,\r\n  \"is_recent\": true,\r\n  \"description\": \"Product 6 Cat2 Product 6 Cat2 Product 6 Cat2 Product 6 Cat2 Product 6 Cat2 Product 6 Cat2 Product 6 Cat2 Product 6 Cat2 Product 6 Cat2 Product 6 Cat2 Product 6 Cat2 \"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://warm-mesa-88190.herokuapp.com/api/products/getByCategoryId/634696ad13cecea4e9ddb8b8",
+							"protocol": "https",
+							"host": [
+								"warm-mesa-88190",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"products",
+								"getByCategoryId",
+								"634696ad13cecea4e9ddb8b8"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Categories",
+			"item": [
+				{
+					"name": "Add Category",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjM0NmFjMjNiYjg2MmUwMWZlNGI2NTM1IiwiZW1haWwiOiJyYW15bWlicmFoaW1AeWFob28uY29tIiwiaWF0IjoxNjY1NTc2Nzg2LCJleHAiOjE2NjU1ODM5ODZ9.mR4AMOtel6wA7L_YT0e3PT5pSAoV9fAsage5rTTKjIE",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"category 2\",\r\n    \"image\":\"assets/img/cat-2.jpg\",\r\n    \"productCount\":0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://warm-mesa-88190.herokuapp.com/api/categories",
+							"protocol": "https",
+							"host": [
+								"warm-mesa-88190",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"categories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetCategories",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Category 2\",\r\n    \"image\":\"assets/img/cat-2.jpg\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://warm-mesa-88190.herokuapp.com/api/categories/",
+							"protocol": "https",
+							"host": [
+								"warm-mesa-88190",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"categories",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"ramymibrahim@yahoo.com\",\r\n    \"password\":\"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://warm-mesa-88190.herokuapp.com/api/users/login",
+							"protocol": "https",
+							"host": [
+								"warm-mesa-88190",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"first_name\":\"Ramy1\",\r\n    \"last_name\":\"Ibrahim1\",\r\n    \"email\":\"ramymibrahim1@yahoo.com\",\r\n    \"password\":\"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://warm-mesa-88190.herokuapp.com/api/users/register",
+							"protocol": "https",
+							"host": [
+								"warm-mesa-88190",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"users",
+								"register"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Orders",
+			"item": [
+				{
+					"name": "Add Orders",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"sub_total_price\": 100.0,\r\n    \"shipping\": 10.0,\r\n    \"total_price\": 110.0,\r\n    \"user_id\": \"6346ac23bb862e01fe4b6535\",\r\n    \"order_date\": \"2022-01-01\",\r\n    \"order_details\": [\r\n        {\r\n            \"product_id\": \"6346c15ea060efd7cae40589\",\r\n            \"price\": 25,\r\n            \"qty\": 2\r\n        },\r\n        {\r\n            \"product_id\": \"6346c186a060efd7cae4058b\",\r\n            \"price\": 25,\r\n            \"qty\": 2\r\n        }\r\n    ],\r\n    \"shipping_info\": {\r\n        \"first_name\": \"Ramy\",\r\n        \"last_name\": \"Ibrahim\",\r\n        \"email\": \"ramymibrahim@yahoo.com\",\r\n        \"mobile_number\": \"01092812848\",\r\n        \"address1\": \"20 M A\",\r\n        \"address2\": \"\",\r\n        \"country\": \"Egypt\",\r\n        \"city\": \"Cairo\",\r\n        \"state\": \"Zamalek\",\r\n        \"zip_code\": \"11211\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://warm-mesa-88190.herokuapp.com/api/orders",
+							"protocol": "https",
+							"host": [
+								"warm-mesa-88190",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetOrders",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://warm-mesa-88190.herokuapp.com/api/orders",
+							"protocol": "https",
+							"host": [
+								"warm-mesa-88190",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"orders"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
