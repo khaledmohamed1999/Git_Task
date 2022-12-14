@@ -32,9 +32,9 @@
         </div>
       </form>
       <app-cart-total
-        [subTotal]="getSubTotal()"
-        [shipping]="getShipping()"
-        [total]="getTotal()"
+        [subTotal]="_getSubTotal()"
+        [shipping]="_getShipping()"
+        [total]="_getTotal()"
       ></app-cart-total>
     </div>
   </div>

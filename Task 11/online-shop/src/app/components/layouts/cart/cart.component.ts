@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { cartLine } from '../../class/cartLine';
 import { StorageService } from 'src/app/services/storage.service';
+import { cart } from '../../class/cart';
 
 @Component({
   selector: 'app-cart',
@@ -8,22 +9,20 @@ import { StorageService } from 'src/app/services/storage.service';
   styleUrls: ['./cart.component.css'],
 })
 export class CartComponent {
-  constructor(private storageService: StorageService) {
+  constructor(private storageService: StorageService,) {
     this.cartLines = storageService.getCartLines();
+    this.cart = new cart(this.cartLines)
   }
   cartLines: cartLine[] = [];
+  cart:cart;
 
-  getTotal(): number {
-    return this.getShipping() + this.getSubTotal();
+  _getTotal(): number {
+    return this.cart.getShipping() + this.cart.getSubTotal();
   }
-  getSubTotal(): number {
-    return this.cartLines
-      .map((x) => x.price * x.quantity)
-      .reduce((a, v) => (a += v), 0);
+  _getSubTotal(): number {
+    return this.cart.getSubTotal();
   }
-  getShipping(): number {
-    return (
-      this.cartLines.map((x) => x.quantity).reduce((a, v) => (a += v), 0) * 2
-    );
+  _getShipping(): number {
+    return this.cart.getShipping();
   }
 }

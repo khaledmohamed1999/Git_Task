@@ -26,6 +26,7 @@ export class cart{
     getTotal(): number{ return this.getShipping() + this.getSubTotal(); }
 
     incQuantity(index: number){
+        console.log(this.cartLineArray[index]);
         this.cartLineArray[index].quantity += 1;
         this.storageService.save(this.cartLineArray);
     }
