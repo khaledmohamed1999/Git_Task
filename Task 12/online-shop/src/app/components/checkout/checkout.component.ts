@@ -11,6 +11,7 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class CheckoutComponent {
   error: string = '';
+  data: any;
   constructor(
     private storageService: StorageService,
     private authService: AuthService
@@ -22,23 +23,17 @@ export class CheckoutComponent {
   cartLines: CartLine[] = [];
 
   getTotal(): number {
-    let total = this.getShipping() + this.getSubTotal()
-    localStorage.setItem("total", total.toString())
-    return total;
+    return this.getShipping() + this.getSubTotal();
   }
 
   getSubTotal(): number {
-    let subTotal = this.cartLines
+    return this.cartLines
     .map((x) => x.price * x.quantity)
     .reduce((a, v) => (a += v), 0);
-    localStorage.setItem("subTotal", subTotal.toString())
-    return subTotal
   }
 
   getShipping(): number {
-    let shipping = this.cartLines.map((x) => x.quantity).reduce((a, v) => (a += v), 0) * 2
-    localStorage.setItem("shipping", shipping.toString())
-    return shipping;
+    return this.cartLines.map((x) => x.quantity).reduce((a, v) => (a += v), 0) * 2;
   }
 
   checkoutForm = new  FormGroup({
@@ -51,13 +46,7 @@ export class CheckoutComponent {
     country: new FormControl('', [Validators.required]),
     city: new FormControl('', [Validators.required]),
     state: new FormControl('', [Validators.required]),
-    zip_code: new FormControl('', [Validators.required]),
-    sub_total_price: new FormControl(Number(localStorage.getItem("subTotal"))),
-    shipping: new FormControl(Number(localStorage.getItem("shipping"))),
-    total_price: new FormControl(Number(localStorage.getItem("total"))),
-    user_id: new FormControl(JSON.parse(localStorage.getItem('loginData') || '')._id),
-    order_date: new FormControl(new Date().getFullYear() + "-" + new Date().getMonth() + "-" + new Date().getDate()),
-    order_details: new FormControl(JSON.parse(localStorage.getItem("orderDetail") || ""))
+    zip_code: new FormControl('', [Validators.required])
   });
 
   orderDetail(){
@@ -74,18 +63,32 @@ export class CheckoutComponent {
 
   sendCheckOut() {
     if (this.checkoutForm.valid) {
-      this.error = '';
-      this.authService.sendCheckOut(this.checkoutForm.value).subscribe({
-        next: (data: any) => {
+      this.data = {
+        shipping_info:{
+          first_name: this.checkoutForm.get('first_name')?.value,
+          last_name: this.checkoutForm.get('last_name')?.value,
+          email: this.checkoutForm.get('email')?.value,
+          mobile_number: this.checkoutForm.get('mobile_number')?.value,
+          address1: this.checkoutForm.get('address1')?.value,
+          address2: this.checkoutForm.get('address2')?.value,
+          country: this.checkoutForm.get('country')?.value,
+          city: this.checkoutForm.get('city')?.value,
+          state: this.checkoutForm.get('state')?.value,
+          zip_code: this.checkoutForm.get('zip_code')?.value,
+        },
+        sub_total_price: this.getSubTotal(),
+        shipping: this.getShipping(),
+        total_price: this.getTotal(),
+        user_id: JSON.parse(localStorage.getItem('loginData') || '')._id,
+        order_date: new Date().getFullYear() + "-" + new Date().getMonth() + "-" + new Date().getDate(),
+        order_details: JSON.parse(localStorage.getItem("orderDetail") || "")
+      };
+      console.log(this.data);
+      this.authService.sendCheckOut(this.data).subscribe({
+        next(data){
           console.log(data);
-        },
-        error: (error: any) => {
-          this.error = error?.error;
-        },
-        complete: () => {
-          console.log('checked out');
-        },
-      });
+        }
+      })
     }
   }
 }
