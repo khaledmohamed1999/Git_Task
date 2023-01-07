@@ -17,16 +17,24 @@ $products = getProducts();
                 <th scope="col">Size</th>
                 <th scope="col">Color</th>
                 <th scope="col">Category</th>
+                <th scope="col">Actions</th>
                 </tr>
             </thead>
             <tbody>
                 <?php foreach ($products as $product) { ?>
                 <tr>
-                <th scope="row"><?=$product['name']?></th>
+                <th scope="row">
+                    <img class="img-fluid" style="width: 75px; height: 75px" src="../<?= $product['image_url'] ?>" alt="" />
+                    <?=$product['name']?>
+                </th>
                 <td><?=$product['price']?></td>
                 <td><?=$product['size_name']?></td>
                 <td><?=$product['color_name']?></td>
                 <td><?=$product['category_name']?></td>
+                <td>
+                    <button type="button" class="btn btn-warning">Edit</button>
+                    <button type="button" class="btn btn-danger">Remove</button>
+                </td>
                 </tr>
                 <?php }?>
             </tbody>
