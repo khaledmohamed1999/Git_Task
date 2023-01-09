@@ -39,10 +39,7 @@ function decQuantity($product){
 }
 
 function remove($product){
-    if (session_status() === PHP_SESSION_NONE)
-        session_start();
-
-    $cart = isset($_SESSION['cart']) ? $_SESSION['cart'] : [];
+    $cart = getCart();
     for ($i = 0; $i < count($cart); $i++) {
         if ($cart[$i]['product']['id'] === $product['id']) {
             array_splice($cart,$i,1);
